@@ -7,7 +7,7 @@ def gen_data_real():
     """Generate a regular 3D dataset"""
 
     n_collects = 20
-    y, x = np.ogrid[-3:3:64j, -3:3:64j]
+    y, x = np.ogrid[-3:3:32j, -3:3:32j]
 
     vel = -np.pi * np.exp(-(x**2 + y**2) / 5) / 12
     vel -= vel.max()
@@ -22,7 +22,7 @@ def gen_data_snaphu():
     Derived from snaphu unit test."""
 
     n_collects = 10
-    y, x = np.ogrid[-3:3:64j, -3:3:64j]
+    y, x = np.ogrid[-3:3:32j, -3:3:32j]
 
     vel = np.pi * (x + y) / 12
     times = np.arange(n_collects) * 12
